@@ -126,7 +126,6 @@ From a SOC perspective, this matters because a suspicious source does not need t
 ![Alert drilldown showing source and destination details](Screenshots/02-so-alert-drilldown-source-ip.png)
 ![RDP alert activity showing repeated communication pattern](Screenshots/03-rdp-alerts-same-source.png)
 ![Correlated scan alerts tied to the same suspicious source](Screenshots/04-correlated-scan-alerts-same-source.png)
-![Broad Kibana pivot on the suspicious source IP](Screenshots/05-kibana-broad-source-ip-pivot.png)
 
 ---
 
