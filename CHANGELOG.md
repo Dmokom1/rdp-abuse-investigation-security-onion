@@ -5,24 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.0] - 2024-07-10
 
 ### Added
-- Initial repository structure
-- Comprehensive README documentation
-- Screenshot evidence from lab exercises
-- LICENSE and .gitignore files
-- CHANGELOG for tracking changes
+- Complete RDP abuse investigation lab setup
+- Detection rules for RDP brute force attacks
+- Security Onion configuration for RDP monitoring
+- Investigation playbook for RDP security incidents
+- Timeline analysis of attack progression
 
 ### Changed
-- Standardized file naming conventions
-- Enhanced README with first-person narrative
-- Added architecture overview section
-- Improved documentation structure
+- Improved detection thresholds to reduce false positives
+- Enhanced investigation methodology based on testing
+- Updated documentation with real investigation examples
 
 ### Fixed
-- N/A (initial release)
+- Resolved log parsing issues for RDP events
+- Fixed time synchronization across investigation tools
+- Corrected alert correlation logic
 
-## Notes
-This project documents hands-on lab work for cybersecurity skill development.
-All activities were performed in isolated lab environments for educational purposes.
+## [0.2.0] - 2024-06-15
+
+### Added
+- Basic RDP monitoring setup
+- Initial investigation steps
+- Lab environment documentation
