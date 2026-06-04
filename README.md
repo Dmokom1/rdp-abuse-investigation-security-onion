@@ -4,7 +4,7 @@ This project was completed in an isolated home SOC lab built for Security Onion 
 
 ---
 
-## Overview
+## Project Overview
 
 This project focuses on investigating RDP-related and scan-related activity in Security Onion after suspicious traffic was generated against a Windows Server domain controller.
 
@@ -14,7 +14,7 @@ The investigation showed repeated alert activity involving a domain controller o
 
 ---
 
-## Why I Built This
+## Why I Built This Project
 
 RDP activity can generate a large amount of network telemetry, especially during scanning, login attempts, or repeated connection behavior.
 
@@ -31,8 +31,7 @@ This project helped reinforce that SOC analysis is often about correlation. A si
 
 ---
 
-## Lab Environment
-
+## Lab Environment & Architecture
 
 ## Architecture
 
@@ -60,7 +59,6 @@ graph TD
 
 *Note: This diagram represents the lab environment and investigation workflow.*
 
-
 | Component | Details |
 |---|---|
 | Suspected Source | `192.168.30.1` |
@@ -72,7 +70,7 @@ graph TD
 
 ---
 
-## Tools Used
+## Tools & Technologies Used
 
 | Tool | Purpose |
 |---|---|
@@ -101,7 +99,7 @@ The project followed this sequence:
 
 Security Onion showed repeated RDP response activity involving the domain controller.
 
-![RDP and Brute-Force Related Alerts in Security Onion](Screenshots/01-so-rdp-bruteforce-alerts.png)
+![Lab Screenshot](screenshots/01-so-rdp-bruteforce-alerts.png)
 
 ## What this proved
 
@@ -131,7 +129,7 @@ This evidence supports RDP-related communication, not proof by itself of success
 
 Security Onion also showed scan-related activity tied to the suspicious source.
 
-![Alert Drilldown Showing Source and Destination Details](Screenshots/02-so-alert-drilldown-source-ip.png)
+![Lab Screenshot](screenshots/02-so-alert-drilldown-source-ip.png)
 
 ## What this proved
 
@@ -154,7 +152,7 @@ This confirmed that the suspicious source was also associated with scan-related 
 
 Another alert family showed repeated Remote Desktop administrator login request traffic.
 
-![RDP Alert Activity Showing Repeated Communication Pattern](Screenshots/03-rdp-alerts-same-source.png)
+![Lab Screenshot](screenshots/03-rdp-alerts-same-source.png)
 
 ## What this proved
 
@@ -178,7 +176,7 @@ The screenshot supports repeated RDP login request telemetry. It should not be o
 
 The strongest evidence came from looking across multiple alert families instead of relying on one alert.
 
-![Correlated Scan Alerts Tied to the Same Suspicious Source](Screenshots/04-correlated-scan-alerts-same-source.png)
+![Lab Screenshot](screenshots/04-correlated-scan-alerts-same-source.png)
 
 ## What this proved
 
@@ -241,7 +239,7 @@ The investigation did not depend on one perfect field. Confidence came from repe
 
 ---
 
-## Key Findings
+## Key Findings & Analysis
 
 ### 1. The domain controller showed repeated RDP response activity
 
@@ -306,7 +304,7 @@ If I expanded this project, I would improve it by:
 
 ---
 
-## Conclusion
+## Conclusion & Lessons Learned
 
 This project investigated suspicious RDP and scan-related activity in Security Onion.
 
