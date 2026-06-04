@@ -37,24 +37,29 @@ This project helped reinforce that SOC analysis is often about correlation. A si
 
 ```mermaid
 graph TD
-    A[Attack Simulation] --> B[Credential Access]
-    B --> C[Golden Ticket Creation]
-    C --> D[Authentication Bypass]
-    D --> E[Privileged Access]
-    E --> F[Detection & Investigation]
-    F --> G[Remediation]
+    subgraph "Attack Simulation"
+        A[Kali Linux] --> B[RDP Bruteforce]
+        B --> C[Windows Server]
+    end
     
-    H[Windows Server 2022 DC] --> I[Active Directory]
-    I --> J[Kerberos Authentication]
-    J --> K[SIEM Integration]
+    subgraph "Log Collection"
+        D[Windows Event Logs]
+        E[Windows Event Forwarding]
+        F[Security Onion]
+    end
     
-    L[Forensic Tools] --> M[FTK Imager]
-    L --> N[Volatility 3]
-    L --> O[DB Browser for SQLite]
+    subgraph "Detection"
+        G[Sigma Rules]
+        H[Suricata Alerts]
+        I[Custom Detection Rules]
+    end
     
-    P[Defender Perspective] --> Q[Event Log Analysis]
-    P --> R[Memory Forensics]
-    P --> S[Browser Artifact Review]
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    F --> H
+    G --> I
 ```
 
 *Note: This diagram represents the lab environment and investigation workflow.*
