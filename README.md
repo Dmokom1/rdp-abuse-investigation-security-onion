@@ -33,6 +33,34 @@ This project helped reinforce that SOC analysis is often about correlation. A si
 
 ## Lab Environment
 
+
+## Architecture
+
+```mermaid
+graph TD
+    A[Attack Simulation] --> B[Credential Access]
+    B --> C[Golden Ticket Creation]
+    C --> D[Authentication Bypass]
+    D --> E[Privileged Access]
+    E --> F[Detection & Investigation]
+    F --> G[Remediation]
+    
+    H[Windows Server 2022 DC] --> I[Active Directory]
+    I --> J[Kerberos Authentication]
+    J --> K[SIEM Integration]
+    
+    L[Forensic Tools] --> M[FTK Imager]
+    L --> N[Volatility 3]
+    L --> O[DB Browser for SQLite]
+    
+    P[Defender Perspective] --> Q[Event Log Analysis]
+    P --> R[Memory Forensics]
+    P --> S[Browser Artifact Review]
+```
+
+*Note: This diagram represents the lab environment and investigation workflow.*
+
+
 | Component | Details |
 |---|---|
 | Suspected Source | `192.168.30.1` |
@@ -75,7 +103,7 @@ Security Onion showed repeated RDP response activity involving the domain contro
 
 ![RDP and Brute-Force Related Alerts in Security Onion](Screenshots/01-so-rdp-bruteforce-alerts.png)
 
-### What this proved
+## What this proved
 
 The alert view showed repeated alerts named:
 
@@ -105,7 +133,7 @@ Security Onion also showed scan-related activity tied to the suspicious source.
 
 ![Alert Drilldown Showing Source and Destination Details](Screenshots/02-so-alert-drilldown-source-ip.png)
 
-### What this proved
+## What this proved
 
 The alert drilldown showed repeated Nmap-related detections with:
 
@@ -128,7 +156,7 @@ Another alert family showed repeated Remote Desktop administrator login request 
 
 ![RDP Alert Activity Showing Repeated Communication Pattern](Screenshots/03-rdp-alerts-same-source.png)
 
-### What this proved
+## What this proved
 
 Security Onion showed repeated alerts named:
 
@@ -152,7 +180,7 @@ The strongest evidence came from looking across multiple alert families instead 
 
 ![Correlated Scan Alerts Tied to the Same Suspicious Source](Screenshots/04-correlated-scan-alerts-same-source.png)
 
-### What this proved
+## What this proved
 
 The grouped alert view showed several related alert types, including:
 
@@ -285,3 +313,25 @@ This project investigated suspicious RDP and scan-related activity in Security O
 The strongest finding was not a single perfect alert. It was the repeated correlation across multiple alert families involving the same domain controller and suspicious source pattern.
 
 The project also showed why source attribution needs caution in virtualized labs. Even when the source IP does not appear exactly as expected, repeated alert relationships can still provide useful investigative evidence when the limitations are documented clearly.
+
+---
+
+## Repository Information
+
+**Project**: rdp-abuse-investigation-security-onion
+**Author**: Dmokom1  
+**Purpose**: Hands-on cybersecurity lab for skill development
+**Environment**: Isolated home lab with Windows Server 2022 DC
+**Tools**: See "Tools Used" section above
+
+### Usage Notes:
+- This repository documents a learning exercise, not production code
+- All screenshots are from controlled lab environments
+- Techniques demonstrated are for educational purposes only
+- Always follow organizational policies and legal guidelines
+
+### Contributing:
+While this is primarily a personal learning portfolio, suggestions and feedback are welcome. Please open an issue to discuss improvements.
+
+### License:
+MIT License - see [LICENSE](LICENSE) file for details.
