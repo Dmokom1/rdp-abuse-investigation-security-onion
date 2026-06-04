@@ -331,5 +331,3 @@ The project also showed why source attribution needs caution in virtualized labs
 ### Contributing:
 While this is primarily a personal learning portfolio, suggestions and feedback are welcome. Please open an issue to discuss improvements.
 
-### License:
-MIT License - see [LICENSE](LICENSE) file for details.
